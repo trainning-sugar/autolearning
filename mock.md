@@ -181,3 +181,25 @@ Mocking can lead to tight coupling between mocks and code under test.
 El sobreuso de objetos simulados como parte de una conjuto de pruebas unitarias puede resultar en un incremento dramático en la cantidad de mantenimiento que debe realizarse en las pruebas mismas.
 
 Overuse of mock objects as part of a suite of unit tests can result in a dramatic increase in the amount of maintenance that needs to be performed on the tests themselves
+
+## HITOS
+
+MILESTONES
+
+- 1999 : Programación extrema emfatiza pruebas unitarias y test orientado al desarrollo. Algunos practicantes de programación extrema con base en londres, empezaron a pensar como las pruebas influye en el código. Han estado utilizando "captadores" para facilitar las pruebas, pero exploran nuevas ideas. Han empezado por evitar los "captadores" y adoptar la composición, donde los objetos probados son pasados a través de los constructores. Esto es años antes que se use el término inyección de dependencia para este enfoque de diseño.
+
+Extreme Programming emphasizes unit testing and Test-Driven Development (TDD). Some adopters of Extreme Programming, based out of London, begin to think about how testing influences coding. They have been using "getters" to facilitate testing but they explore new ideas. They start avoiding "getters" and adopt composition, where test objects are passed via constructors. This is years before the term Dependency Injection is used for this design approach.
+
+- 2000 : Ideas iniciales de pruebas simuladas son presentadas en la conferencia de XP2000. En este momento, el enfoque se llama Endo-testing. Este nombre viene del hecho que los objetos simulados son pasados dentro del código de dominio. Afirman que esto simplifica la arquitectura de prueba. Evita la contaminación del código de dominio desde que las aserciones no están en el código de producción sino en las pruebas unitarias.
+
+Initial ideas of mock testing are presented at the XP2000 conference. At this time, the approach is called Endo-Testing. This name comes from the fact that mock objects are passed into domain code and tested from within. They claim that this simplifies testing architecture. It avoids polluting domain code since assertions are not in production code but in unit tests.
+
+- 2001 : EasyMock is released. It's the first library to provide dynamic mock objects.
+
+- Jun 2004: Version 1.0.0 of jMock is released. This provides an expressive API over DynaMock Java library. DynaMock itself comes from an earlier work by Nat Pryce who introduced mocking to Ruby. He emphasized assertions on messages passed between objects rather than just parameter values.
+
+- Apr 2007 : Nat Pryce and Steve Freeman rework jMock to produce jMock2. 
+
+- Jul 2008: Framework Mockito v1.5 for Java is released. By now, mock testing is more than just identifying where a test has failed. It's more about interactions among objects. Mockito simplifies mocking by taking a different approach compared to jMock or EasyMock. We don't have to set up expectations in mock objects in advance. We can simply create them and query them later after execution.
+
+- Dec 2008: Google releases Google Mock, a mocking framework for C++. Version 1.7.0 is released in 2013. In 2015, this is absorbed into the GoogleTest project.
