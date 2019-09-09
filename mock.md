@@ -10,14 +10,14 @@ Mock en español : burlarse de, mofarse de, imitar algo.
 
 ### Palabras Reservadas
 
-![testing](img/testing-1.jpg)
+![testing](img/testing-1.JPG)
 ![mock](img/mock-1.png)
 
 ## ¿Qué es es mock testing?
 
 Mock testing, es un enfoque de test unitario que te permite realizar aserciones cómo el código por debajo del test está interactuando con otro sistema de módulos.
 
-![mocking test](img/mock-1.jpg)
+![mocking test](img/mock-1.JPG)
 
 En Mock Testing (Comprobación imitando algo), las dependencias están remplazadas con objetos que simulan su comportamiento real.
 El propósito del mocking (imitar algo) es de aislar y enfocarse en el código siendo comprobado y no en el comportamiento o el estado de las dependencias externas.
