@@ -107,3 +107,48 @@ This overcomes the limits of proxy-based mocking.
 
 En el lenguaje Swift, un desarrollador escribió en su blog que usa dos formas de pruebas simuladas : Inyección de instancia y configuración de inyección. El primero es el mas simple pero no puede manejar objetos estáticos.
 In Swift language, one developers blogged that he uses two ways to do mocking: instance injection and configuration injection. The former is simpler but it can't handle static objects.
+
+### ¿Cuáles son las mejores prácticas para pruebas simuladas?
+
+What are some best practices for mock testing?
+
+Aquí algunas buenas pràcticas para pruebas simuladas.
+Here are some best practices for mocking.
+
+- Solo simula los tipos que tienes
+- Only mock types that you own
+
+Tipos externos tienen sus propias dependencias. Estas incluso pueden cambiar su comportamiento en una versión futura.
+External types have dependencies on their own. They might even change their behaviour in a future version.
+En su lugar, crea un adaptador y simule ese adaptador.
+Instead, create an adapter and mock that adapter.
+
+- No simule valores
+- Don't mock values
+
+Los valores no deberían ser simulados. La simulación tiene como objetivo hacer visible las relaciones e interacciones entre los objetos. Obtener un valor no es una interacción.
+Values should not be mocked. Mocking aims to make the relationships and interactions between objects visible. Getting a value is not an interaction.
+
+- Evita simular clases concretas
+- Avoid mocking concrete classes
+
+Las relaciones son fáciles de ver a través de interfaces en lugar de clases concretas. Podríamos terminar del todo simulando algunos métodos pero olvidando otros. Simula roles, no objetos.
+
+Relationships are easier to see via interfaces rather than concrete classes. We might end up mocking some methods but forget others. Mock roles, not objects.
+
+- No simules todo
+- Don't mock everything
+Esto es un anti-patrón. Si todo está simulado, podríamos terminar del todo probando algo bastante diferente del sistema en producción.
+This is an anti-pattern. If everything is mocked, we may end up testing something quite different from production system.
+
+- Utiliza pruebas integradas
+- Use integration tests
+
+Cuando compruebas multiples módulos o si estás interesado en data que proviene de una base de datos externa, deberías hacer test integrados en lugar de simular.
+When testing multiple modules or if you're interested in data coming from an external database, you should do integration testing rather than mocking
+
+- Comprobaciones negativas
+- Negative tests
+
+Usa las imitaciones para simular errores y comprobar manejadores de errores. Utiliza las imitaciones para verificar que algún método/API no se llama.
+Use mocks to simulate errors and test error handling. Use mocks to verify that some methods/APIs are not called.
