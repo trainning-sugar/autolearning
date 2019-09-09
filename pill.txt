@@ -1,0 +1,22 @@
+Qué es un programa
+Qué es una algoritmo
+Qué es un proceso Inicio, proceso, Fin
+Entrada -> Ejecución -> Salida
+Instrucciones : Orden, claras, cortas
+Software conjunto de programas que trabajan en conjunto para resolver una tarea en común
+Cual en el proceso para conectarte a una red social
+Pseudocódigo
+
+Representación gráfica de algortimo o proceso
+1.- Nombre del proceso
+2.- Autor
+3.- Inicio
+4.- Desarrollo (código)
+5. Fin
+
+
+Debe tenerse presente que la solución de un problema dado mediante
+el uso de una computadora es un sistema, el cual debe tener una entrada de
+datos, los cuales serán procesados para obtener una salida, que es la solución o información que se busca
+
+https://docs.google.com/presentation/d/1K2h8gDIufyWKcdP2Cs7N1cBslQLoZMYrwnq7P0_2lFc/edit#slide=id.g3419bc7714_0_225
