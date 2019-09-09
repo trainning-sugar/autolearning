@@ -81,3 +81,29 @@ Mientras que las pruebas unitarias tienen más que ver con la verificación basa
 Por ejemplo, asumamos, que la central de seguridad está siendo testeado. Depende de la puerta. Cuando la central de seguridad activa la seguridad total, unit testing verificará que el estado final de la puerta esté cerrada.
 En cambio, el mocking verificará que el método correcto fue invocado con los argumentos esperados, como es el caso de Door.close(). Mocks registra las llamadas que recibe para que puedan afirmarse.
 While unit tests are more about state-based verification, mock testing is more about behaviour-based verification. For example, let's assume that SecurityCentral is being tested. It depends on Door. When SecurityCentral activates full security, unit testing will verify the final state of Door, that it's closed. Mocking would instead verify that the correct method was invoked with expected arguments, such as Door.close(). Mocks register the calls they receive so these can be asserted.
+
+### ¿Cuáles son los casos comunes de mock testing (prueba simulada) ?
+
+- Prueba simulada en proxy, un objeto proxy es usado en lugar del objeto original.
+In proxy-based mocking, a proxy object is used instead of the original object.
+EL proxy puede manejar todas las llamadas hacia el objeto original o seleccionar enviar algunas llamadas.
+The proxy may handle all calls to the original object or selectively 
+forward some calls.
+
+Herramientas que realizan las pruebas simuladas, como, EasyMock, JMock,Mockito ofrecen este tipo de simulación.
+Mock frameworks such as EasyMock, JMock, Mockito offer this type of mocking.
+
+Sin embargo, puede tener limitaciones en terminos de proxying static/private/ métodos finales o una clase final.
+However, there may be limitations in terms of proxying static/private/final methods or a final class.
+
+- Prueba simulada basada en classloader-remapping, una cargador de clases reasigna la referencia.
+In classloader-remapping-based mocking, a class loader remaps the reference.
+
+Por lo tanto, cargará el objeto simulado en vez que el original. Herramienta de simulación como JMockit and PowerMock lo soportan
+Thus, it loads the mock object rather than the original one. Mock frameworks such as JMockit and PowerMock support this. 
+
+Este tipo supera los limites de las pruebas simuladas basadas en proxy.
+This overcomes the limits of proxy-based mocking.
+
+En el lenguaje Swift, un desarrollador escribió en su blog que usa dos formas de pruebas simuladas : Inyección de instancia y configuración de inyección. El primero es el mas simple pero no puede manejar objetos estáticos.
+In Swift language, one developers blogged that he uses two ways to do mocking: instance injection and configuration injection. The former is simpler but it can't handle static objects.
