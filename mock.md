@@ -45,3 +45,19 @@ Code that have side effects should be called only in production. Examples includ
 
 Mocking avoids duplicating test code across similar tests. The task of verifying method or API calls from our module can be delegated to the mock.
 Mocking avoids duplicating test code across similar tests. The task of verifying method or API calls from our module can be delegated to the mock.
+
+### ¿ Nos puedes dar algunos ejemplos de mock testing?
+
+![mock](img/mock-3.JPG)
+
+Digamos, una clase de pedido, completa pedidos, llamando a una clase de almacén. El último sabe el inventario actual.
+Si estamos probando la unidad de clase de pedido, burlaremos la clase de inventario. No nos preocupamos en probar la clase de almacén ahora mismo. Pero ya que es una dependencia de orden nos burlamos de él.
+Nuestro objeto de burla puede ser llamado WarehouseMock;
+Let's say, an Order class fulfils orders by calling a Warehouse class. The latter knows the current inventory. If we are unit testing Order class, we mock the Warehouse. We don't care about testing Warehouse right now. But since it's a dependency for Order, we mock it. Our mock object can be called WarehouseMock.
+
+Un objeto de burla (Mock Object) proporciona una supuesta implementación de la misma interfaz como el objeto real.
+Those calling it are unaware that it's a mock (Quienes lo llaman no saben que es un simulacro). Por lo tanto, para la clase pedido, WarehouseMock tiene el mismo aspecto que inventario. Esto es justo lo que necesitamos para comprobar de manera unitaria la clase pedido (testear).
+A mock object provides a pseudo implementation of the same interface as the real object. Those calling it are unaware that it's a mock. Thus, to the Order class, WarehouseMock looks the same as Warehouse. This is just what we need to unit test Order class.
+
+Otro ejemplo es sobre la aplicación que llama a un API externa para obtener información de películas. En lugar de realizar llamadas reales, estas pueden ser simuladas o burladas para que cuando la petición a la api se realice, el objeto simulado (mock object) simplemente lea y responda con datos de prueba de un sistema de archivos local.
+Another example is about an application calling an external API to get information about movies. Instead of making real calls, this can be mocked so that when API calls are made, the mock object will simply read and respond with test data from a local file system.
