@@ -67,3 +67,17 @@ Another example is about an application calling an external API to get informati
 Si tu código utiliza objetos estáticos o singletons es más dificil hacer mocking. En tales casos es mejor hacer un refactor de código.
 Por otro lado, de manera general, mocking no requiere que modifiques tu código base. De hecho, la inyección de dependencias es la manera usual de cómo esos objetos deberían ser creados. Las dependencias se vuelven visibles en el constructor y otros métodos. Éstas dependencias pueden, por lo tanto, ser fácilmente reemplazadas durante el proceso de testing con objetos simulados. Esto se puede configurar en código o mediante un archivo de configuración.
 If your code uses static objects or singletons, then it's difficult to do mocking. In such cases, it's better to refactor code. Otherwise, in general, mocking doesn't require you to modify the codebase. In fact, dependency injection is the usual way in which objects should be created. Dependencies become visible in the constructors and other methods. These dependencies can therefore be easily replaced during testing with mock objects.  This can be configured either in code or via a configuration file.
+
+### ¿Cuál es la diferencia del unit testing tradicional vs el mock testing?
+
+![mock](mock-4.JPG)
+
+En las pruebas unitarias tradicionales, las pruebas unitarias hacen afirmaciones sobre los estados esperados del sistema bajo prueba o de sus dependencias.
+Con el test simulado, no se requieren comprobaciones de las pruebas unitarias.
+Las comprobaciones son realizadas por el objeto simulado. Estos objetos son inicializados por adelantado sobre qué métodos esperan ser llamados y cómo deben responder.
+In traditional unit testing, unit tests do assertions about states expected of either the system under test or its dependencies. With mock testing, no assertions are required from the unit tests themselves. Assertions are done by the mock objects. These objects are initialized in advance about what method calls are expected and how they should respond.
+
+Mientras que las pruebas unitarias tienen más que ver con la verificación basada en el estado, las pruebas simuladas tienen más que ver con la verificación basada en el comportamiento.
+Por ejemplo, asumamos, que la central de seguridad está siendo testeado. Depende de la puerta. Cuando la central de seguridad activa la seguridad total, unit testing verificará que el estado final de la puerta esté cerrada.
+En cambio, el mocking verificará que el método correcto fue invocado con los argumentos esperados, como es el caso de Door.close(). Mocks registra las llamadas que recibe para que puedan afirmarse.
+While unit tests are more about state-based verification, mock testing is more about behaviour-based verification. For example, let's assume that SecurityCentral is being tested. It depends on Door. When SecurityCentral activates full security, unit testing will verify the final state of Door, that it's closed. Mocking would instead verify that the correct method was invoked with expected arguments, such as Door.close(). Mocks register the calls they receive so these can be asserted.
