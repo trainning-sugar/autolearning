@@ -70,7 +70,7 @@ If your code uses static objects or singletons, then it's difficult to do mockin
 
 ### ¿Cuál es la diferencia del unit testing tradicional vs el mock testing?
 
-![mock](mock-4.JPG)
+![mock](img/mock-4.JPG)
 
 En las pruebas unitarias tradicionales, las pruebas unitarias hacen afirmaciones sobre los estados esperados del sistema bajo prueba o de sus dependencias.
 Con el test simulado, no se requieren comprobaciones de las pruebas unitarias.
