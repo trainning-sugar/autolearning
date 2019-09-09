@@ -61,3 +61,9 @@ A mock object provides a pseudo implementation of the same interface as the real
 
 Otro ejemplo es sobre la aplicación que llama a un API externa para obtener información de películas. En lugar de realizar llamadas reales, estas pueden ser simuladas o burladas para que cuando la petición a la api se realice, el objeto simulado (mock object) simplemente lea y responda con datos de prueba de un sistema de archivos local.
 Another example is about an application calling an external API to get information about movies. Instead of making real calls, this can be mocked so that when API calls are made, the mock object will simply read and respond with test data from a local file system.
+
+### ¿El mocking requiere que los developers modifiquen su código base?
+
+Si tu código utiliza objetos estáticos o singletons es más dificil hacer mocking. En tales casos es mejor hacer un refactor de código.
+Por otro lado, de manera general, mocking no requiere que modifiques tu código base. De hecho, la inyección de dependencias es la manera usual de cómo esos objetos deberían ser creados. Las dependencias se vuelven visibles en el constructor y otros métodos. Éstas dependencias pueden, por lo tanto, ser fácilmente reemplazadas durante el proceso de testing con objetos simulados. Esto se puede configurar en código o mediante un archivo de configuración.
+If your code uses static objects or singletons, then it's difficult to do mocking. In such cases, it's better to refactor code. Otherwise, in general, mocking doesn't require you to modify the codebase. In fact, dependency injection is the usual way in which objects should be created. Dependencies become visible in the constructors and other methods. These dependencies can therefore be easily replaced during testing with mock objects.  This can be configured either in code or via a configuration file.
