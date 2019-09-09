@@ -167,3 +167,17 @@ JustMock and MOQ package are useful for .NET developers. . There's also JustMock
 For C++ developers, there's TypeMock and Google Mock. The latter is part of GoogleTest. TypeMock uses a templating approach to create mocks whereas Google Mock uses interitance.
 
 Other frameworks include EasyMock, JMock, JMockit, and PowerMock. Ease of use, maintainability and learning curve are some things to consider when choosing a framework.
+
+### ¿Cuáles son algunas limitaciones de hacer pruebas simuladas?
+
+Escribir buenas simulaciones requiere un buen entendimiento sobre dependencias.
+Writing good mocks requires good understanding of dependencies.
+
+De otra manera, las pruebas simuladas pueden no representar con exactitud el comportamiento del mundo-real.
+Otherwise, mocks may not accurately represent real-world behaviour.
+Simular puede llevar a un acoplamiento apretado entre simulacros y código bajo prueba.
+Mocking can lead to tight coupling between mocks and code under test.
+
+El sobreuso de objetos simulados como parte de una conjuto de pruebas unitarias puede resultar en un incremento dramático en la cantidad de mantenimiento que debe realizarse en las pruebas mismas.
+
+Overuse of mock objects as part of a suite of unit tests can result in a dramatic increase in the amount of maintenance that needs to be performed on the tests themselves
