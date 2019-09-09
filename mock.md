@@ -152,3 +152,18 @@ When testing multiple modules or if you're interested in data coming from an ext
 
 Usa las imitaciones para simular errores y comprobar manejadores de errores. Utiliza las imitaciones para verificar que algún método/API no se llama.
 Use mocks to simulate errors and test error handling. Use mocks to verify that some methods/APIs are not called.
+
+### ¿Cuáles son algunos frameworks para hacer pruebas simuladas?
+
+What are some mocking frameworks?
+
+Mientras que es posible escribir objetos simulados de manera manual, los frameworks simplifican esta tarea.
+[Mockito](https://site.mockito.org/) es un framework de código abierto para hacer pruebas con Java. Se afirma que es uno de los más populares.
+
+While it's possible to manually write mock objects, mocking frameworks simplify the task. Mockito is an open source testing framework for Java. Mockito is claimed to be the one of the popular ones.
+
+JustMock and MOQ package are useful for .NET developers. . There's also JustMock Lite when dealing with loosely coupled code. Wiremock is suitable for mocking HTTP-based APIs.
+
+For C++ developers, there's TypeMock and Google Mock. The latter is part of GoogleTest. TypeMock uses a templating approach to create mocks whereas Google Mock uses interitance.
+
+Other frameworks include EasyMock, JMock, JMockit, and PowerMock. Ease of use, maintainability and learning curve are some things to consider when choosing a framework.
